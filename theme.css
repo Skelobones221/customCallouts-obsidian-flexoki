@@ -41,6 +41,8 @@ https://stephango.com/flexoki
   --color-base-60: #878580;
   --color-base-70: #6F6E69;
   --color-base-100: #100F0F;
+   --color-base-20-rgba: 230, 228, 217,0.15;
+  --color-base-70-rgba: 111, 110, 105, 0.15;
 }
 .theme-dark {
   --color-red-rgb: 209, 77, 65;
@@ -51,6 +53,8 @@ https://stephango.com/flexoki
   --color-blue-rgb: 67, 133, 190;
   --color-purple-rgb: 139, 126, 200;
   --color-pink-rgb: 206, 93, 151;
+  --color-base-20-rgba: 16,15,15,0.15;
+  --color-base-70-rgba: 135, 133, 128, 0.15;
 
   --color-red: #D14D41;
   --color-orange: #DA702C;
@@ -78,5 +82,142 @@ https://stephango.com/flexoki
   --color-base-50: #575653;
   --color-base-60: #6F6E69;
   --color-base-70: #878580;
-  --color-base-100: #CECDC3;
+  --color-base-100: #CECDC3;  
+}
+
+/* red group */
+.callout--red,
+.callout[data-callout^="red"],
+.callout[data-callout^="fail"],
+.callout[data-callout^="missing"],
+.callout[data-callout^="miss"],
+.callout[data-callout^="error"],
+.callout[data-callout^="bug"],
+.callout[data-callout^="danger"] {
+  /* light: use --color-red-rgb as 600 equivalent; dark: use same var but dark theme overrides RGB */
+  --callout-color: var(--color-red);
+  background-color: rgba(var(--color-red-rgb), 0.15);
+  color: var(--color-red);
+}
+
+/* fruit or colour group */
+.callout--orange,
+.callout[data-callout^="orange"],
+.callout[data-callout^="warning"],
+.callout[data-callout^="question"],
+.callout[data-callout^="attention"],
+.callout[data-callout^="caution"],
+.callout[data-callout^="unsure"] {
+  --callout-color: var(--color-orange);
+  background-color: rgba(var(--color-orange-rgb), 0.15);
+  color: var(--color-orange);
+}
+
+/* (yellow) look at the sky, look at the stars group */
+.callout--yellow,
+.callout[data-callout^="yellow"],
+.callout[data-callout^="referenceme"],
+.callout[data-callout^="citeme"],
+.callout[data-callout^="approve"],
+.callout[data-callout^="consider"],
+.callout[data-callout^="noref"],
+.callout[data-callout^="nosource"] {
+  --callout-color: var(--color-yellow);
+  background-color: rgba(var(--color-yellow-rgb), 0.15);
+  color: var(--color-yellow);
+  --callout-icon: lucide-notepad-text-dashed; /*This section is designed for citations needed to be added.*/
+}
+
+/* Green */
+.callout--green,
+.callout[data-callout^="green"],
+.callout[data-callout^="check"],
+.callout[data-callout^="done"],
+.callout[data-callout^="finished"],
+.callout[data-callout^="fin"],
+.callout[data-callout^="complete"] {
+  --callout-color: var(--color-green);
+  background-color: rgba(var(--color-green-rgb), 0.15);
+  color: var(--color-green);
+}
+
+/* miku flavoured group */
+.callout--teal,
+.callout[data-callout^="teal"],
+.callout[data-callout^="important"],
+.callout[data-callout^="todo"],
+.callout[data-callout^="tip"],
+.callout[data-callout^="tldr"],
+.callout[data-callout^="summary"],
+.callout[data-callout^="abstract"] {
+  --callout-color: var(--color-cyan);
+  background-color: rgba(var(--color-cyan-rgb), 0.15);
+  color: var(--color-cyan);
+}
+
+/* Blue man group */
+.callout--blue,
+.callout[data-callout^="blue"],
+.callout[data-callout^="note"],
+.callout[data-callout^="info"],
+.callout[data-callout^="wiki"],
+.callout[data-callout^="faq"] {
+  --callout-color: var(--color-blue);
+  background-color: rgba(var(--color-blue-rgb), 0.15);
+  color: var(--color-blue);
+}
+
+/* Purple guy fnaf */
+.callout--purple,
+.callout[data-callout^="purple"],
+.callout[data-callout^="example"],
+.callout[data-callout^="help"],
+.callout[data-callout^="rawdata"],
+.callout[data-callout^="dimension"] {
+  --callout-color: var(--color-purple);
+  background-color: rgba(var(--color-purple-rgb), 0.15);
+  color: var(--color-purple);
+}
+
+/* 'magenta' group (IT'S PINK TRUST ME!!) hehe :D' */
+.callout--magenta,
+.callout[data-callout^="magenta"],
+.callout[data-callout^="music"],
+.callout[data-callout^="song"],
+.callout[data-callout^="lang"],
+.callout[data-callout^="language"],
+.callout[data-callout^="dependency"],
+.callout[data-callout^="dependent"],
+.callout[data-callout^="import"],
+.callout[data-callout^="derived"] {
+  --callout-color: var(--color-pink);
+  background-color: rgba(var(--color-pink-rgb), 0.15);
+  color: var(--color-pink);
+}
+
+/* base colour stuffs, just white yk */
+.callout--base,
+.callout[data-callout^="base"],
+.callout[data-callout^="quote"],
+.callout[data-callout^="citation"],
+.callout[data-callout^="comment"] {
+  --callout-color: var(--color-base-100);
+  background-color:rgba(var(--color-base-70-rgba));
+  color: var(--color-base-70);
+  --callout-icon: lucide-quote;
+}
+
+
+/*ALTERNATE ICONS*/
+/*music:*/
+.callout[data-callout^="music"],
+.callout[data-callout^="song"] {
+  --callout-icon: lucide-audio-lines;
+}
+/*branching stuffs*/
+.callout[data-callout^="dependency"],
+.callout[data-callout^="dependent"],
+.callout[data-callout^="import"],
+.callout[data-callout^="derived"] {
+  --callout-icon: lucide-git-branch;
 }
